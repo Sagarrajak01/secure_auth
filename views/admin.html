@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel - secure_auth</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="container container-wide">
+    <div class="card">
+      <div class="dashboard-header">
+        <div>
+          <h2>Admin RBAC Panel</h2>
+          <p class="subtitle">Manage system users and access privileges.</p>
+        </div>
+        <div style="display: flex; gap: 10px; align-items: center;">
+          <button type="button" class="theme-toggle" id="themeToggleBtn">🌓 Theme</button>
+          <button style="width: auto; padding: 8px 16px; background: rgba(255,255,255,0.1);" onclick="location.href='/views/dashboard.html'">Dashboard</button>
+          <button id="logoutBtn" style="width: auto; padding: 8px 16px; background: var(--danger);">Logout</button>
+        </div>
+      </div>
+
+      <div id="alertBox" class="alert"></div>
+
+      <div style="overflow-x: auto;">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Role</th>
+              <th>Created At</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="usersTableBody">
+            <tr>
+              <td colspan="6" style="text-align: center;">Loading users...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/admin.js"></script>
+</body>
+</html>
