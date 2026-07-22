@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - secure_auth</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="container container-wide">
+    <div class="card">
+      <div class="dashboard-header">
+        <div>
+          <h2>User Dashboard</h2>
+          <p class="subtitle" id="welcomeText">Welcome back!</p>
+        </div>
+        <div style="display: flex; gap: 10px; align-items: center;">
+          <button type="button" class="theme-toggle" id="themeToggleBtn">🌓 Theme</button>
+          <span id="roleBadge" class="user-badge">user</span>
+          <button id="adminBtn" style="display: none; width: auto; padding: 8px 16px;" onclick="location.href='/views/admin.html'">Admin Panel</button>
+          <button id="logoutBtn" style="width: auto; padding: 8px 16px; background: var(--danger);">Logout</button>
+        </div>
+      </div>
+
+      <div id="alertBox" class="alert"></div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+        <div style="background: var(--card-sub-bg); padding: 20px; border-radius: 12px; border: 1px solid var(--glass-border);">
+          <h3 style="margin-bottom: 15px; font-size: 18px;">Profile Information</h3>
+          <p><strong>Name:</strong> <span id="profileName">-</span></p>
+          <p style="margin-top: 10px;"><strong>Email:</strong> <span id="profileEmail">-</span></p>
+          <p style="margin-top: 10px;"><strong>Joined:</strong> <span id="profileJoined">-</span></p>
+        </div>
+
+        <div style="background: var(--card-sub-bg); padding: 20px; border-radius: 12px; border: 1px solid var(--glass-border);">
+          <h3 style="margin-bottom: 15px; font-size: 18px;">Change Password</h3>
+          <form id="passwordForm">
+            <div class="form-group" style="margin-bottom: 12px;">
+              <label for="currentPassword">Current Password</label>
+              <input type="password" id="currentPassword" required>
+            </div>
+            <div class="form-group" style="margin-bottom: 12px;">
+              <label for="newPassword">New Password</label>
+              <input type="password" id="newPassword" required placeholder="Min 8 chars">
+            </div>
+            <button type="submit" style="padding: 10px;">Update Password</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/dashboard.js"></script>
+</body>
+</html>
